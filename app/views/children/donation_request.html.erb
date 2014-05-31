@@ -1,0 +1,45 @@
+<div id="childInfoDisplay">
+	<h1>Child information</h1>
+
+
+	<table>
+		<tr> <td class="leftTableData">Child:</td> <td class="rightTableData"><%=@child.name%></td> </tr>
+		<tr> <td class="leftTableData">Gift:</td> <td class="rightTableData"><%=@child.wish_gift%></td> </tr>
+		<tr> <td class="leftTableData">Age:</td> <td class="rightTableData"><%=@child.age%></td> </tr>
+		<tr> <td class="leftTableData">Shoe Size:</td> <td class="rightTableData"><%=@child.shoe_size%></td> </tr>
+		<tr> <td class="leftTableData">Pant Size:</td> <td class="rightTableData"><%=@child.pant_size%></td> </tr>
+		<tr> <td class="leftTableData">Shirt Size:</td> <td class="rightTableData"><%=@child.shirt_size%></td> </tr>
+		
+		<%if @child.donor_id.nil? == false%>
+			<tr>	<td>Donor:</td> <td class="rightTableData"><%=link_to "#{@donor.first_name} #{@donor.last_name}", :controller => "donors", :action => "show", :id => @donor.id%></td> </tr>
+		<%end%>
+		
+	</table>
+</div>
+
+
+
+<%if @child.donor_id == false or @child.donor_id.nil?%>
+
+	<div id="donationClaim">
+		<h1>Claim this donation</h1>
+		
+		<h2>Your Information</h2>
+		
+		<%=form_tag(:action => "update_donor", :method => "get") do%>
+			<table>
+				<tr> <td><%=label_tag(:first_name, "First Name:")%></td> <td class="rightTableData"><%=text_field_tag(:first_name)%></td> </tr>
+				<tr> <td><%=label_tag(:last_name, "Last Name:")%></td> <td class="rightTableData"><%=text_field_tag(:last_name)%></td> </tr>
+				<tr> <td><%=label_tag(:email, "Email:")%></td> <td class="rightTableData"><%=text_field_tag(:email)%></td> </tr>
+				<tr> <td><%=label_tag(:phone, "Phone:")%></td> <td class="rightTableData"><%=text_field_tag(:phone)%></td> </tr>
+				<tr> <td><%=label_tag(:street_address, "Street Address:")%></td> <td class="rightTableData"><%=text_field_tag(:street_address)%></td> </tr>
+				<tr> <td><%=label_tag(:city, "City:")%></td> <td class="rightTableData"><%=text_field_tag(:city)%></td> </tr>
+				<tr> <td><%=label_tag(:zip_code, "Zip code:")%></td> <td class="rightTableData"><%=text_field_tag(:zip_code)%></td> </tr>
+				<tr> <td><%=hidden_field_tag(:child_id, @child.id)%></td> </tr>
+				
+				<tr> <td><%=submit_tag('Claim Donation')%></td> </tr>
+			</table>
+		<%end%>
+	</div>
+
+<%end%>

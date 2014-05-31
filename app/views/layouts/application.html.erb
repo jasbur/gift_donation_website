@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>Gift Donation Website</title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+	
+	<header>
+		<div id="headerTextBlock">
+			<h1>Gift Donation Website</h1>
+			<h2>Small gestures. HUGE impact.</h2>
+		</div>
+		
+		<%=link_to image_tag("LogoColorTextBelow.jpeg", :class => "headerLogo"), :controller => "main", :action => "index"%>
+	</header>
+	
+	<body>
+		<div id="mainContent">
+			<%= yield %>
+		</div>
+	</body>
+	
+</html>

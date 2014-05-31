@@ -1,0 +1,122 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body{
+	margin: 0px;
+	background-color: #FAFAFA;
+	font-family: 'Droid Sans';
+	font-size: 12pt;
+}
+
+body ul{
+	list-style: none;
+}
+
+header {
+	min-height: 198px;
+	background-image: url('header_gradient.png');
+	background-repeat: repeat-x;
+	background-color: #921616;
+	border-bottom: 6px solid #771212;
+	border-bottom-left-radius: 156px;
+	border-bottom-right-radius: 156px;
+}
+
+header a{
+	color: #FFFFFF;
+}
+
+div#headerTextBlock {
+	margin: 0px 0px 0px 218px;
+	padding: 24px 0px 0px 182px;
+	font-size: 1.6em;
+	color: #F8F8F8;
+}
+
+div#headerTextBlock h1{
+	margin: 0;
+}
+
+.headerLogo {
+	float: left;
+	margin: -171px 0px 0px 223px;
+	width: 151px;
+}
+
+div#mainContent {
+	min-height: 200px;
+	padding: 39px 0px 0px 102px;
+}
+
+.welcomeParagraph {
+	margin: 49px 0px 0px 50px;
+	max-width: 962px;
+	font-size: 1.2em;
+}
+
+div#giftBoxDisplay {
+	overflow: auto;
+	padding: 21px 20px 45px 77px;
+	border-left: 38px solid #771212;
+	border-top: 11px solid #771212;
+	border-top-left-radius: 143px;
+	border-bottom: 11px solid #771212;
+	border-bottom-left-radius: 88px;
+	background-image: url('main_content_gradient.png');
+	background-repeat: repeat-x;
+}
+
+.giftImage {
+	width: 190px;
+	float: left;
+	margin: 40px 0px 0px 62px;
+}
+
+div#donationClaim {
+	width: 481px;
+	float: left;
+	margin: 29px 0px 0px 8%;
+	padding: 0px 0px 47px 34px;
+	background-image: url('header_gradient.png');
+	background-repeat: repeat-x;
+	background-color: #921616;
+	border-radius: 36px;
+	color: #fff;
+	font-size: 1.5em;
+}
+
+div#childInfoDisplay {
+	float: left;
+	margin: 28px 0px 0px 5%;
+	padding: 0px 45px 39px 36px;
+	width: 445px;
+	background-image: url('child_info_gradient.png');
+	background-repeat: repeat-x;
+	background-color: #fff;
+	border: 7px solid #D9202D;
+	border-radius: 36px;
+	font-size: 1.5em;
+}
+
+div#childInfoDisplay tr{
+	vertical-align: baseline;
+}
+
+.leftTableData{
+	width:120px;
+}
+
+.rightTableData{
+	padding: 0px 0px 0px 38px;
+}

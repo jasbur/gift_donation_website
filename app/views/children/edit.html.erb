@@ -1,0 +1,13 @@
+<%=form_tag(:action => "update_child", :method => "get") do%>
+	<table>
+		<tr> <td><%=label_tag(:name, "Child's name:")%></td> <td class="rightTableData"><%=text_field_tag(:name, @child.name)%></td> </tr>
+		<tr> <td><%=label_tag(:age, "Age:")%></td> <td class="rightTableData"><%=text_field_tag(:age, @child.age)%></td> </tr>
+		<tr> <td><%=label_tag(:wish_gift, "Wish gift:")%></td> <td class="rightTableData"><%=text_field_tag(:wish_gift, @child.wish_gift)%></td> </tr>
+		<tr> <td><%=label_tag(:shoe_size, "Shoe Size:")%></td> <td class="rightTableData"><%=text_field_tag(:shoe_size, @child.shoe_size)%></td> </tr>
+		<tr> <td><%=label_tag(:pant_size, "Pant Size:")%></td> <td class="rightTableData"><%=text_field_tag(:pant_size, @child.pant_size)%></td> </tr>
+		<tr> <td><%=label_tag(:shirt_size, "Shirt Size:")%></td> <td class="rightTableData"><%=text_field_tag(:shirt_size, @child.shirt_size)%></td> </tr>	
+		<tr> <td><%=hidden_field_tag(:child_id, @child.id)%></td> </tr>
+		
+		<tr> <td><%=submit_tag('Update Information')%></td> </tr>
+	</table>
+<%end%>

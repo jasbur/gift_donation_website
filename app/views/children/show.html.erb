@@ -1,0 +1,18 @@
+<div id="childInfoDisplay">
+	<h1>Child information</h1>
+
+
+	<table>
+		<tr> <td class="leftTableData">Name:</td> <td class="rightTableData"><%=@child.name%></td> </tr>
+		<tr> <td class="leftTableData">Age:</td> <td class="rightTableData"><%=@child.age%></td> </tr>
+		<tr> <td class="leftTableData">Gift:</td> <td class="rightTableData"><%=@child.wish_gift%></td> </tr>
+		<tr> <td class="leftTableData">Shoe Size:</td> <td class="rightTableData"><%=@child.shoe_size%></td> </tr>
+		<tr> <td class="leftTableData">Pant Size:</td> <td class="rightTableData"><%=@child.pant_size%></td> </tr>
+		<tr> <td class="leftTableData">Shirt Size:</td> <td class="rightTableData"><%=@child.shirt_size%></td> </tr>
+		
+		<%if @child.donor_id.nil? == false%>
+			<tr>	<td>Donor:</td> <td class="rightTableData"><%=link_to "#{@donor.first_name} #{@donor.last_name}", :controller => "donors", :action => "show", :id => @donor.id%></td> </tr>
+		<%end%>
+		
+	</table>
+</div>

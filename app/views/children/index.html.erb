@@ -1,0 +1,14 @@
+<h1>Search for Child entries</h1>
+
+<%=form_tag(:action => "search", :method => "get") do%>
+	<ul>
+		<li><%=label_tag(:query, "Child's name:")%> <%=text_field_tag(:query)%></li>
+		
+		<li><%=submit_tag('Search')%></li>
+	</ul>
+<%end%>
+
+<ul>
+	<li><%=link_to 'Click here to view all records', :action => 'search', :query => ''%></li>
+	<li><%=link_to "Add a new child", :action => "new"%></li>
+</ul>

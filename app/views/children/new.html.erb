@@ -1,0 +1,14 @@
+<h1>Enter new child information</h1>
+
+<%=form_tag(:action => "create", :method => "get") do%>
+	<table>
+		<tr> <td><%=label_tag(:name, "Child's name:")%></td> <td class="rightTableData"><%=text_field_tag(:name)%></td> </tr>
+		<tr> <td><%=label_tag(:age, "Age:")%></td> <td class="rightTableData"><%=text_field_tag(:age)%></td> </tr>
+		<tr> <td><%=label_tag(:wish_gift, "Wish gift:")%></td> <td class="rightTableData"><%=text_field_tag(:wish_gift)%></td> </tr>
+		<tr> <td><%=label_tag(:shoe_size, "Shoe Size:")%></td> <td class="rightTableData"><%=text_field_tag(:shoe_size)%></td> </tr>
+		<tr> <td><%=label_tag(:pant_size, "Pant Size:")%></td> <td class="rightTableData"><%=text_field_tag(:pant_size)%></td> </tr>
+		<tr> <td><%=label_tag(:shirt_size, "Shirt Size:")%></td> <td class="rightTableData"><%=text_field_tag(:shirt_size)%></td> </tr>
+		
+		<tr><td><%=submit_tag('Add Information')%></td></tr>
+	</table>
+<%end%>

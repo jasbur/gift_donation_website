@@ -1,0 +1,19 @@
+<h1>Not contacted yet:</h1>
+
+<ul>
+<%@donors.each{|donor|%>
+	<%if donor.contacted == false or donor.contacted.nil?%>
+		<li><%=link_to "#{donor.first_name} #{donor.last_name}", :action => "show", :id => donor.id%> | <%=link_to "Mark as contacted", :action => "mark_as_contacted", :contacted => true, :id => donor.id%></li>
+	<%end%>
+<%}%>
+</ul>
+
+<h1>Already contacted:</h1>
+
+<ul>
+<%@donors.each{|donor|%>
+	<%if donor.contacted%>
+		<li><%=link_to "#{donor.first_name} #{donor.last_name}", :action => "show", :id => donor.id%> | <%=link_to "Mark as NOT contacted", :action => "mark_as_contacted", :contacted => false, :id => donor.id%></li>
+	<%end%>
+<%}%>
+</ul>

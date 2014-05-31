@@ -1,0 +1,26 @@
+<ul>
+	<%if @children.nil?%>
+	
+		No records found
+		
+	<%else%>
+
+		<table>
+			<%for child in @children%>
+			
+				<tr> <td><%=link_to "edit", :action => "edit", :id => child.id%></td> <td class="rightTableData"><%=link_to child.name, :action => 'show', :id => child.id %></td> 
+					
+					<td class="rightTableData">
+						<%if child.donor_id.nil?%>
+							
+						<%else%>
+							<%=link_to "HAS DONOR", :controller => "donors", :action => "show", :id => child.donor_id%>
+						<%end%>
+					</td>
+					
+					<td class="rightTableData"><%=link_to "Delete", {:action => "delete_child_record", :id => child.id}, :confirm => "Delete #{child.name}? If the child has a donor, make sure to contact them."%></td></tr>
+				
+				<%end%>
+		</table>
+	<%end%>
+</ul>

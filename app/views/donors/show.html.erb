@@ -1,0 +1,33 @@
+<h1>Donor information</h1>
+
+<table>
+	<tr><td>Name:</td><td class="rightTableData"><%=@donor.first_name%> <%=@donor.last_name%></td></tr>
+	<tr><td>Email:</td><td class="rightTableData"><%=@donor.email%></td></tr>
+	<tr><td>Phone:</td><td class="rightTableData"><%=@donor.phone%></td></tr>
+	<tr><td>Address:</td><td class="rightTableData"><%=@donor.street_address%></td></tr>
+	<tr><td>City/State</td><td class="rightTableData"><%=@donor.city%>, <%=@donor.zip_code%></td></tr>
+	<tr><td>Contacted:</td>
+		<%if @donor.contacted == true%>
+			<td class="rightTableData">YES</td>
+		<%else%>
+			<td class="rightTableData">NO</td>
+		<%end%>
+	</tr>
+</table>
+
+<%if @donor.contacted == false or @donor.contacted.nil?%>
+	<%=link_to "Mark as contacted", :action => "mark_as_contacted", :contacted => true, :id => @donor.id%>
+<%else%>
+	<%=link_to "Mark as NOT contacted", :action => "mark_as_contacted", :contacted => false, :id => @donor.id%>
+<%end%>
+
+<h2>Donated (<%=@donor.created_at%>):</h2>
+
+<table>
+	<tr><td>Name:</td> <td class="rightTableData"><%=@donor.child.name%></td></tr>
+	<tr> <td>Age:</td> <td class="rightTableData"><%=@donor.child.age%></td> </tr>
+	<tr><td>Wish Gift::</td> <td class="rightTableData"><%=@donor.child.wish_gift%></td></tr>
+	<tr> <td>Shoe Size:</td> <td class="rightTableData"><%=@donor.child.shoe_size%></td> </tr>
+	<tr> <td>Pant Size:</td> <td class="rightTableData"><%=@donor.child.pant_size%></td> </tr>
+	<tr> <td>Shirt Size:</td> <td class="rightTableData"><%=@donor.child.shirt_size%></td> </tr>
+</table>

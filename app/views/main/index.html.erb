@@ -1,0 +1,18 @@
+<div id="giftBoxDisplay">
+	<h1>Click on a gift below</h1>
+
+	<p class="welcomeParagraph">Thank you for joining us to make these local children's Christmas a 
+		little brighter! Please drop off unwrapped goods by December 14th to your local drop-off location. Please include child's wish list with the unwrapped gifts. If you are interested in volunteering please contact us @ <a href="mailto:mail@domain.com">mail@domain.com</a></p>
+
+	<ul>
+		<%@children.each{|child|%>
+			
+			<%if child.donor_id.nil? == false%>
+				<li><%=image_tag("gift_inactive.svg", :class => "giftImage")%></li>
+			<%else%>
+				<li><%=link_to image_tag("gift.svg", :class => "giftImage"), :controller => "children", :action => "donation_request", :id => child.id%>	</li>
+			<%end%>
+		
+		<%}%>
+	</ul>
+</div>
